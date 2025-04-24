@@ -40,7 +40,7 @@ public class Book {
     }
 
     public String toString(){
-        return "Book ID:" + id + ", Title: " + title + ", Author: " + author + ", Category: " + ", Available Copies: "
+        return "Book ID:" + id + ", Title: " + title + ", Author: " + author + ", Category: " + category + ", Available Copies: "
                 + availableCopies + "/" + totalCopies;
     }
 
