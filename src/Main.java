@@ -10,6 +10,8 @@ public class Main {
             System.out.println("--Library Menu--");
             System.out.println(" 1. Add Book");
             System.out.println(" 2. View All Books");
+            System.out.println(" 3. Register User");
+            System.out.println(" 4. View All Users");
             System.out.println(" 0. Exit");
             System.out.println("Choose an Option: ");
             choice = scanner.nextInt();
@@ -36,14 +38,26 @@ public class Main {
                 case 2:
                     library.listBooks();
                     break;
-
+                case 3:
+                    System.out.print("Enter User ID: ");
+                    int userId = scanner.nextInt();
+                    scanner.nextLine(); // consume newline
+                    System.out.print("Enter User Name: ");
+                    String userName = scanner.nextLine();
+                    User newUser = new User(userId, userName);
+                    library.registerUsers(newUser);
+                    break;
+                case 4:
+                    library.listUsers();
+                    break;
+                case 0:
+                    System.out.println("Exiting... Sayonara.");
+                    break;
                 default:
                     System.out.println("Invalid option. Try Again!");
             }
 
-        }while (choice != 0);{
-            System.out.println("Exiting... Sayonara.");
-        };
+        }while (choice != 0);
 
         scanner.close();
     }
