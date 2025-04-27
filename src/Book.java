@@ -4,18 +4,15 @@ public class Book {
     private String title;
     private String author;
     private String category;
-    private int totalCopies;
-    private int availableCopies;
+    private int copies;
 
 
-    public Book(int id, String title, String author, String category, int totalCopies){
+    public Book(int id, String title, String author, String category, int copies){
         this.id = id;
         this.title = title;
         this.author = author;
         this.category = category;
-        this.totalCopies =totalCopies;
-        this.availableCopies = totalCopies;
-
+        this.copies = copies;
     }
     public int getId() {
         return id;
@@ -29,19 +26,16 @@ public class Book {
     public String getCategory(){
         return category;
     }
-    public int getTotalCopies(){
-        return totalCopies;
+    public int getCopies(){
+        return copies;
     }
-    public int getAvailableCopies(){
-        return availableCopies;
-    }
-    public void setAvailableCopies(int count){
-        this.availableCopies = count;
+    public void setCopies(int copies){
+        this.copies = copies;
     }
 
+
     public String toString(){
-        return "Book ID:" + id + ", Title: " + title + ", Author: " + author + ", Category: " + category + ", Available Copies: "
-                + availableCopies + "/" + totalCopies;
+        return "Book ID:" + id + ", Title: " + title + ", Author: " + author + ", Category: " + category + ", Available Copies: " + copies;
     }
 
 
