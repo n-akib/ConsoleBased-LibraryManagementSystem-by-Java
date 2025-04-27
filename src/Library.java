@@ -84,6 +84,8 @@ public class Library<T extends Book> {
 
         book.setCopies(book.getCopies() + 1);
         System.out.println("Book '" + book.getTitle() + "' returned by " + user.getName());
+        issuedBooks.remove(bookId);
+
     }
 
     //Methods for search by Title, Author, Category

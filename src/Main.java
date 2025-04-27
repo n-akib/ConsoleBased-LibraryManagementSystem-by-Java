@@ -17,6 +17,7 @@ public class Main {
             System.out.println(" 7. Search Book by Title");
             System.out.println(" 8. Search Book by Author");
             System.out.println(" 9. Search Book by Category");
+            System.out.println(" 10. View Borrowed Books List");
             System.out.println(" 0. Exit");
             System.out.println("Choose an Option: ");
             choice = scanner.nextInt();
@@ -86,6 +87,9 @@ public class Main {
                     scanner.nextLine();
                     String sCategory = scanner.nextLine();
                     library.searchByCategory(sCategory);
+                    break;
+                case 10:
+                    library.viewBorrowedBooks();
                     break;
                 case 0:
                     System.out.println("Exiting... Sayonara.");
