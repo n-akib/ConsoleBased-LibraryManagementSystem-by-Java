@@ -6,12 +6,12 @@ public class Library<T extends Book> {
     public Map<Integer, T> books = new HashMap<>();
     public Map<Integer, User> users = new HashMap<>();
     private Map<Integer, Integer> issuedBooks;
+    //private Map<Integer, User> users;
+
 
     public Library(){
         this.issuedBooks = new HashMap<>();
     }
-    //private Map<Integer, T> books;
-    //private Map<Integer, User> users;
 
 
     //Methods for Book
@@ -31,10 +31,10 @@ public class Library<T extends Book> {
 
 
     //Methods for User
-    public void registerUsers(User user){
-        users.put(user.getId(), user);
-        System.out.println("User Registered: " + user.getName());
-    }
+//    public void registerUsers(User user){
+//        users.put(user.getId(), user);
+//        System.out.println("User Registered: " + user.getName());
+//    }
     public void listUsers(){
         if(users.isEmpty()){
             System.out.println("No user Registered.");
@@ -44,6 +44,16 @@ public class Library<T extends Book> {
             }
         }
     }
+    public void registerUser(int id, String name, String email) {
+        if (users.containsKey(id)) {
+            System.out.println("User with this ID already exists!");
+            return;
+        }
+        User user = new User(id, name, email);
+        users.put(id, user);
+        System.out.println("User registered successfully!");
+    }
+
 
     //Method for issuing the book
     public void issueBook(int bookId, int userId) {

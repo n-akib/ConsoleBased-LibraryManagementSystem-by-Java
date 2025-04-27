@@ -47,12 +47,17 @@ public class Main {
                 case 3:
                     System.out.print("Enter User ID: ");
                     int userId = scanner.nextInt();
-                    scanner.nextLine(); // consume newline
+                    scanner.nextLine(); // consume leftover newline
+
                     System.out.print("Enter User Name: ");
                     String userName = scanner.nextLine();
-                    User newUser = new User(userId, userName);
-                    library.registerUsers(newUser);
+
+                    System.out.print("Enter User Email: ");
+                    String userEmail = scanner.nextLine();
+
+                    library.registerUser(userId, userName, userEmail);
                     break;
+
                 case 4:
                     library.listUsers();
                     break;
